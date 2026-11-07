@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Startova</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Franchise brands and manufacturers get a market check, a vetted local partner, an adapted product and a launch. You do not need your own office in the region.">
+<meta property="og:title" content="Startova · 创途">
+<meta property="og:description" content="We bring Asian brands to Russia, Uzbekistan and Kazakhstan.">
+<meta property="og:url" content="https://startova.pro/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Geist";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/geist-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Geist";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/geist-cyrillic-400-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Geist";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/geist-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Geist";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/geist-cyrillic-500-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Geist";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/geist-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Geist";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/geist-cyrillic-600-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Geist";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/geist-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Geist";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/geist-cyrillic-700-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+
+/* Layout idea: a route map from Asian brand capitals to Central Asian hubs carries the hero; below, two sides of the deal set side by side, then the path a brand takes. Palette from Samarkand tilework: lapis ink, turquoise, a little saffron. */
+:root{
+  --bg:#f2f4f3;
+  --surface:#ffffff;
+  --ink:#16213f;
+  --muted:#56607a;
+  --line:#d5dbe0;
+  --lapis:#1f3a8a;
+  --tile:#0b8a86;
+  --saffron:#c98a12;
+  --tile-soft:rgba(11,138,134,.10);
+  --font-display:"Geist","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",system-ui,sans-serif;
+  --font-body:"Geist","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1424;--surface:#151d33;--ink:#e9edf6;--muted:#9aa6c0;--line:#2a3550;
+    --lapis:#8fa8ff;--tile:#38c4bd;--saffron:#f0b440;--tile-soft:rgba(56,196,189,.12);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1424;--surface:#151d33;--ink:#e9edf6;--muted:#9aa6c0;--line:#2a3550;
+  --lapis:#8fa8ff;--tile:#38c4bd;--saffron:#f0b440;--tile-soft:rgba(56,196,189,.12);
+  color-scheme:dark;
+}
+html[lang="zh"]{--font-display:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",system-ui,sans-serif;--font-body:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--tile)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5.2vw,60px);line-height:1.05;font-weight:600;letter-spacing:-.035em}
+h2{font-size:clamp(26px,3.2vw,36px);line-height:1.12;font-weight:600;letter-spacing:-.025em}
+h3{font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+html[lang="zh"] h1,html[lang="zh"] h2,html[lang="zh"] h3{letter-spacing:0}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:19px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.logo svg{width:28px;height:28px}
+.nav-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+.lang button{font:inherit;font-size:14px;font-weight:500;border:0;background:none;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang button:focus-visible,.btn:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:16px;text-decoration:none;padding:12px 20px;border-radius:10px;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--tile);color:var(--surface)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
+.btn-small{padding:8px 14px;font-size:14px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:36px 0 32px}
+.kicker{display:inline-block;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tile);margin-bottom:18px}
+html[lang="zh"] .kicker{letter-spacing:.1em}
+.lead{font-size:19px;color:var(--muted);max-width:56ch;margin:22px 0 28px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.map{width:100%;height:auto;display:block}
+.map .land{fill:var(--tile-soft)}
+.map .route{fill:none;stroke:var(--tile);stroke-width:1.4;stroke-dasharray:4 5;opacity:.85}
+.map .route.ru{stroke:var(--saffron);opacity:.7}
+.map .dot-asia{fill:var(--lapis)}
+.map .dot-hub{fill:var(--tile)}
+.map .hub-ring{fill:none;stroke:var(--tile);stroke-width:1.2}
+.map text{font-family:var(--font-body);font-size:13px;fill:var(--ink)}
+.map text.hub{font-weight:600;font-size:14px}
+.map text.note{fill:var(--muted);font-size:11px}
+@media (prefers-reduced-motion:no-preference){
+  .map .route{animation:flow 3s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-18}}
+}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:24px 0 8px}
+.stat{padding:22px 20px 20px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--font-display);font-size:32px;font-weight:600;letter-spacing:-.03em;color:var(--lapis);font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{display:block;font-size:14px;color:var(--muted);margin-top:6px}
+.src{font-size:13px;color:var(--muted);margin:10px 0 0}
+
+section{padding:56px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head p{color:var(--muted);max-width:52ch;margin:10px 0 0}
+
+/* sides */
+.sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.side{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px 30px 26px;display:flex;flex-direction:column;gap:14px}
+.side.brand{border-top:4px solid var(--lapis)}
+.side.buyer{border-top:4px solid var(--tile)}
+.side.pro{border-top:4px solid var(--saffron)}
+.side .tag{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.side .sub{color:var(--muted);margin:0}
+.side ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}
+.side li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.side li svg{margin-top:4px}
+.q{font-weight:600;color:var(--ink)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;position:relative}
+.step{padding:0 22px 0 0;position:relative}
+.step .num{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.step .num b{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--bg);font-family:var(--font-display);font-size:16px;flex:none}
+.step .num i{height:1px;background:var(--line);flex:1}
+.step:last-child .num i{display:none}
+.step h3{margin-bottom:6px}
+.step p{margin:0;color:var(--muted);font-size:16px}
+
+/* pilot */
+.pilot{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;background:#16213f;color:#f2f4f3;border-radius:20px;padding:40px}
+.pilot h2{color:#f2f4f3}
+.pilot p{margin:14px 0 0;font-size:18px;opacity:.92}
+.pilot .terms{display:grid;gap:14px;align-content:start}
+.pilot .term{border-top:1px solid rgba(255,255,255,.18);padding-top:12px}
+.pilot .term b{display:block;font-family:var(--font-display);font-size:22px;color:#f0b440}
+html[lang="zh"] .pilot .term b{font-family:var(--font-display)}
+.pilot .term span{font-size:15px;opacity:.85}
+.pilot .btn-primary{margin-top:22px;background:#38c4bd;color:#16213f}
+
+/* markets + limits */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{border:1px solid var(--line);border-radius:16px;padding:26px 28px;background:var(--surface)}
+.panel h3{margin-bottom:12px}
+.panel p{margin:0 0 10px;color:var(--muted)}
+.panel p:last-child{margin-bottom:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+.chip{font-size:14px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid var(--line)}
+.chip.now{background:var(--tile);border-color:var(--tile);color:var(--surface)}
+.chip.next{border-style:dashed}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:start}
+.contact .cards{display:grid;gap:12px}
+.ccard{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.ccard span{color:var(--muted);font-size:14px}
+.ccard b{font-weight:600}
+.ccard b.todo{color:var(--saffron)}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){
+  .hero,.sides,.pilot,.two,.contact{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr;row-gap:28px}
+  .step .num i{display:none}
+}
+@media (max-width:480px){
+  .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .stats{grid-template-columns:1fr}
+  .stat{border-left:0;padding-left:0;border-top:1px solid var(--line)}
+  .stat:first-child{border-top:0}
+  .steps{grid-template-columns:1fr}
+  .pilot{padding:28px 22px}
+  .side{padding:24px 20px}
+  .nav{flex-wrap:wrap}
+}
+
+
+/* additions: pay line, manufacturer card, form, WeChat card */
+.side.maker{border-top:4px solid var(--saffron)}
+.side .pay{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;display:grid;gap:4px}
+.side .pay b{font-weight:600}
+.formgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:32px;align-items:start}
+.formgrid .lead{margin:14px 0 0}
+.fbox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px}
+form{display:flex;flex-direction:column;gap:24px;min-width:0}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+legend{font-weight:600;padding:0;margin-bottom:10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative;font-size:15px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);cursor:pointer;user-select:none}
+.opts label:hover{border-color:var(--tile)}
+.opts input{position:absolute;opacity:0;width:1px;height:1px}
+.opts label:has(input:checked){background:var(--tile);border-color:var(--tile);color:var(--surface)}
+.opts label:has(input:focus-visible){outline:2px solid var(--tile);outline-offset:2px}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld span{font-size:14px;color:var(--muted)}
+input[type=text],textarea{font:inherit;font-size:16px;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+input[type=text]:focus,textarea:focus{outline:2px solid var(--tile);outline-offset:1px;border-color:var(--tile)}
+textarea{min-height:96px;resize:vertical}
+.err{color:#b4231c;font-size:15px;margin:0}
+:root[data-theme="dark"] .err{color:#ff8a80}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .err{color:#ff8a80}}
+.send{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.note{font-size:14px;color:var(--muted);margin:0;max-width:34ch}
+.linkbtn{align-self:flex-start;background:none;border:0;padding:0;font:inherit;font-size:15px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.linkbtn:hover{color:var(--ink)}
+.nope{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:14px}
+.thanks{display:flex;flex-direction:column;gap:10px}
+.thanks h3{font-size:24px}
+.qrcard{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.qrcard .qr{width:96px;height:96px;background:#fff;padding:6px;border-radius:8px;flex:none}
+.qrcard .qr img{width:100%;height:100%;display:block}
+.qrcard span{color:var(--muted);font-size:14px}
+.ccard b{overflow-wrap:anywhere;user-select:all}
+@media (max-width:900px){.formgrid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}}
+@media (max-width:480px){.fbox{padding:22px 18px}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top" aria-label="Startova">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="7" fill="var(--ink)"/><path d="M7 19 Q14 6 21 12" fill="none" stroke="var(--tile)" stroke-width="2.2" stroke-linecap="round"/><circle cx="7" cy="19" r="2.4" fill="var(--saffron)"/><circle cx="21" cy="12" r="2.4" fill="#fff"/></svg>
+      Startova
+    </a>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" id="lang-ru" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" id="lang-zh" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="btn btn-ghost btn-small" href="#contact" data-t="nav_contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <span class="kicker" data-t="kicker3">For Asian brands · Russia and Central Asia</span>
+      <h1 data-t="h1">We bring Asian brands to Russia, Uzbekistan and Kazakhstan.</h1>
+      <p class="lead" data-t="lead">Franchise brands and manufacturers get a market check, a vetted local partner, an adapted product and a launch. You do not need your own office in the region.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#form" data-t="cta1">Tell us what you need</a>
+        <a class="btn btn-ghost" href="#brands" data-t="cta_b">For franchise brands</a>
+        <a class="btn btn-ghost" href="#makers" data-t="cta_m">For manufacturers</a>
+      </div>
+    </div>
+    <svg class="map" viewBox="0 0 640 310" role="img" aria-labelledby="map-title">
+      <title id="map-title">Routes from brand cities in East and Southeast Asia to Almaty, Tashkent and Moscow</title>
+      <ellipse class="land" cx="130" cy="110" rx="125" ry="80"/>
+      <ellipse class="land" cx="460" cy="200" rx="160" ry="100"/>
+      <path class="route" d="M464 194 Q300 70 152 110"/>
+      <path class="route" d="M503 149 Q320 40 152 110"/>
+      <path class="route" d="M464 237 Q300 120 152 110"/>
+      <path class="route" d="M413 256 Q260 150 98 123"/>
+      <path class="route" d="M592 162 Q370 20 152 110"/>
+      <path class="route" d="M352 290 Q220 190 98 123"/>
+      <path class="route ru" d="M464 194 Q260 -20 40 24"/>
+      <circle class="dot-asia" cx="464" cy="194" r="5"/><text x="474" y="198" data-t="city_sha">Shanghai</text>
+      <circle class="dot-asia" cx="503" cy="149" r="5"/><text x="513" y="153" data-t="city_sel">Seoul</text>
+      <circle class="dot-asia" cx="592" cy="162" r="5"/><text x="586" y="182" text-anchor="middle" data-t="city_tyo">Tokyo</text>
+      <circle class="dot-asia" cx="464" cy="237" r="5"/><text x="474" y="241" data-t="city_tpe">Taipei</text>
+      <circle class="dot-asia" cx="413" cy="256" r="5"/><text x="423" y="270" data-t="city_hkg">Hong Kong</text>
+      <circle class="dot-asia" cx="352" cy="290" r="5"/><text x="342" y="294" text-anchor="end" data-t="city_sin">Singapore</text>
+      <circle class="hub-ring" cx="152" cy="110" r="11"/><circle class="dot-hub" cx="152" cy="110" r="5"/>
+      <text class="hub" x="156" y="138" text-anchor="middle" data-t="city_ala">Almaty</text>
+      <circle class="hub-ring" cx="98" cy="123" r="11"/><circle class="dot-hub" cx="98" cy="123" r="5"/>
+      <text class="hub" x="82" y="128" text-anchor="end" data-t="city_tas">Tashkent</text>
+      <circle class="dot-hub" cx="114" cy="54" r="3.5"/><text x="124" y="58" data-t="city_nqz">Astana</text>
+      <text class="hub" x="24" y="16" data-t="city_mow">→ Moscow</text>
+    </svg>
+  </header>
+
+  <div class="stats" role="list">
+    <div class="stat" role="listitem"><b data-t="sn1">205 M</b><span data-t="sx1">people in Russia, Uzbekistan and Kazakhstan</span></div>
+    <div class="stat" role="listitem"><b data-t="sn2">82.4k</b><span data-t="sx2">new companies in Uzbekistan in 2025</span></div>
+    <div class="stat" role="listitem"><b data-t="sn3">2.15 M</b><span data-t="sx3">operating small and medium businesses in Kazakhstan</span></div>
+    <div class="stat" role="listitem"><b data-t="sn4">+46.8%</b><span data-t="sx4">visitors from China to Kazakhstan, 2025 vs 2024</span></div>
+  </div>
+  <p class="src" data-t="src3">Sources: Rosstat, national statistics of Uzbekistan and Kazakhstan, Zakon.kz, Travel Trends Today.</p>
+
+  <section aria-labelledby="sides-title">
+    <div class="sec-head">
+      <div>
+        <h2 id="sides-title" data-t="who_title">Two kinds of partners</h2>
+        <p data-t="sides_lead">Franchise brands and manufacturers from mainland China, Taiwan, Hong Kong, Japan, Singapore and Korea.</p>
+      </div>
+    </div>
+    <div class="sides">
+      <article class="side brand" id="brands">
+        <span class="tag" data-t="tag_b">Franchisors</span>
+        <h3 data-t="ttl_b">Enter three countries without an office of your own</h3>
+        <p class="sub" data-t="b_sub">Restaurants, cafés, tea and coffee, bakeries, retail and services that already franchise at home.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--lapis)" stroke-width="2"/></svg><span data-t="b1">Market brief for your category: demand, competitors and prices in Moscow, Tashkent, Almaty and Astana</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--lapis)" stroke-width="2"/></svg><span data-t="b2">A vetted master franchisee: capital, operating team and food or retail experience checked</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--lapis)" stroke-width="2"/></svg><span data-t="b3">Adaptation: menu and recipes for local supply, halal where needed, pricing, trademark, translated standards and training</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--lapis)" stroke-width="2"/></svg><span data-t="b4">Launch: social media, targeted ads and delivery apps in each country</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--lapis)" stroke-width="2"/></svg><span data-t="b5">Deal support on the ground until the master agreement is signed, and reports from open units after that</span></li>
+        </ul>
+        <div class="pay"><span class="tag" data-t="pay_label">How you pay</span><b data-t="b_pay">You pay a success fee from the signed master agreement. Adaptation and promotion are priced per project.</b></div>
+      </article>
+      <article class="side maker" id="makers">
+        <span class="tag" data-t="tag_m">Manufacturers</span>
+        <h3 data-t="ttl_m">Sell in Russia and Central Asia through checked partners</h3>
+        <p class="sub" data-t="m_sub">Food and drink, kitchen and café equipment, packaging, consumer goods.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--saffron)" stroke-width="2"/></svg><span data-t="m1">A place in the equipment and supply lists of the businesses we help launch</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--saffron)" stroke-width="2"/></svg><span data-t="m2">Distributors and dealers in each country, checked before you meet them</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--saffron)" stroke-width="2"/></svg><span data-t="m3">Marketplaces: Wildberries and Ozon in Russia, Uzum in Uzbekistan, Kaspi in Kazakhstan</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--saffron)" stroke-width="2"/></svg><span data-t="m4">Localisation: Russian labels and manuals, EAC certification for Russia and Kazakhstan, national certification in Uzbekistan</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="var(--saffron)" stroke-width="2"/></svg><span data-t="m5">Payment and logistics routes that work today, tested before the first shipment</span></li>
+        </ul>
+        <div class="pay"><span class="tag" data-t="pay_label">How you pay</span><b data-t="m_pay">You pay a commission on sales or on the distribution deal.</b></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="steps" aria-labelledby="how-title">
+    <div class="sec-head"><h2 id="how-title" data-t="st_title">How a launch runs</h2></div>
+    <ol class="steps" style="list-style:none;margin:0;padding:0">
+      <li class="step"><div class="num"><b>1</b><i></i></div><h3 data-t="s1h">Call</h3><p data-t="s1t">30 minutes on WeChat, Zoom or at the expo. We learn your product, terms and limits.</p></li>
+      <li class="step"><div class="num"><b>2</b><i></i></div><h3 data-t="s2h">Market brief</h3><p data-t="s2t">In 2–3 weeks: demand, competitors, prices and the best two or three cities for your category.</p></li>
+      <li class="step"><div class="num"><b>3</b><i></i></div><h3 data-t="s3h">Partner and adaptation</h3><p data-t="s3t">We bring two or three vetted candidates and adapt the product, price and materials.</p></li>
+      <li class="step"><div class="num"><b>4</b><i></i></div><h3 data-t="s4h">Launch</h3><p data-t="s4t">First unit or first shipment, local promotion and reports on how it sells.</p></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="pilot-title">
+    <div class="pilot">
+      <div>
+        <h2 id="pilot-title" data-t="pilot_title">Pilot for brands</h2>
+        <p data-t="pilot_p">In 60–90 days we prepare a market brief for your category and introduce 2–3 vetted candidates. If we find no suitable candidate, you pay nothing.</p>
+        <a class="btn btn-primary" href="#form" data-t="pilot_cta">Discuss a pilot</a>
+      </div>
+      <div class="terms">
+        <div class="term"><b data-t="t1n">60–90 days</b><span data-t="t1t">from the first call to introductions</span></div>
+        <div class="term"><b data-t="t2n">2–3 candidates</b><span data-t="t2t">checked for capital and operating experience</span></div>
+        <div class="term"><b data-t="t3n">Success fee</b><span data-t="t3t">paid only when an agreement is signed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Markets and limits" style="padding-top:8px">
+    <div class="two">
+      <div class="panel">
+        <h3 data-t="mk_t">Markets</h3>
+        <div class="chips">
+          <span class="chip now" data-t="mk_ru">Russia</span>
+          <span class="chip now" data-t="mk_uz">Uzbekistan</span>
+          <span class="chip now" data-t="mk_kz">Kazakhstan</span>
+          <span class="chip next" data-t="mk_kg">Kyrgyzstan</span>
+          <span class="chip next" data-t="mk_ae">UAE</span>
+          <span class="chip next" data-t="mk_sa">Saudi Arabia</span>
+        </div>
+        <p data-t="mk_p">Startova is built for any market. For now we focus on Russia, Uzbekistan and Kazakhstan, where we know the cities, partners and rules. In Russia mass demand in most categories does not depend on halal certification; in Uzbekistan and Kazakhstan halal matters for food.</p>
+      </div>
+      <div class="panel">
+        <h3 data-t="lim_t">What we don't do</h3>
+        <p data-t="lim1">We don't guarantee payback or the financial result of any business.</p>
+        <p data-t="lim2">We don't give legal or investment advice. Licensed local partners do.</p>
+        <p data-t="lim3">We don't invest in franchises.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="form" aria-labelledby="fm-t">
+    <div class="formgrid">
+      <div>
+        <h2 id="fm-t" data-t="fm_title">Tell us what you need</h2>
+        <p class="lead" data-t="fm_lead">Five minutes. Your answers decide which services we build first. We reply to everyone who leaves a contact.</p>
+      </div>
+      <div class="fbox">
+        <form id="lead" novalidate>
+          <fieldset>
+            <legend data-t="q_role">You are</legend>
+            <div class="opts">
+              <label><input type="radio" name="role" id="r-brand" value="franchise_brand"><span data-t="r_brand">Franchise brand</span></label>
+              <label><input type="radio" name="role" id="r-mf" value="manufacturer"><span data-t="r_mf">Manufacturer</span></label>
+              <label><input type="radio" name="role" id="r-dist" value="distributor"><span data-t="r_dist">Distributor or trading company</span></label>
+              <label><input type="radio" name="role" id="r-inv" value="investor"><span data-t="r_inv">Investor</span></label>
+              <label><input type="radio" name="role" id="r-oth" value="other"><span data-t="r_other">Other</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend data-t="q_home">Where you are based</legend>
+            <div class="opts">
+              <label><input type="radio" name="home" id="h-cn" value="CN"><span data-t="h_cn">Mainland China</span></label>
+              <label><input type="radio" name="home" id="h-tw" value="TW"><span data-t="h_tw">Taiwan</span></label>
+              <label><input type="radio" name="home" id="h-hk" value="HK"><span data-t="h_hk">Hong Kong</span></label>
+              <label><input type="radio" name="home" id="h-jp" value="JP"><span data-t="h_jp">Japan</span></label>
+              <label><input type="radio" name="home" id="h-sg" value="SG"><span data-t="h_sg">Singapore</span></label>
+              <label><input type="radio" name="home" id="h-kr" value="KR"><span data-t="h_kr">Korea</span></label>
+              <label><input type="radio" name="home" id="h-oth" value="other"><span data-t="h_other">Other</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend data-t="q_mk">Markets you are considering</legend>
+            <div class="opts" data-group="markets">
+              <label><input type="checkbox" id="k-ru" value="RU"><span data-t="k_ru">Russia</span></label>
+              <label><input type="checkbox" id="k-uz" value="UZ"><span data-t="k_uz">Uzbekistan</span></label>
+              <label><input type="checkbox" id="k-kz" value="KZ"><span data-t="k_kz">Kazakhstan</span></label>
+              <label><input type="checkbox" id="k-cis" value="other_cis"><span data-t="k_cis">Other CIS</span></label>
+              <label><input type="checkbox" id="k-open" value="not_decided"><span data-t="k_open">Not decided</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend data-t="q_need">What you need from us</legend>
+            <div class="opts" data-group="needs">
+              <label><input type="checkbox" id="x-brief" value="market_brief"><span data-t="x_brief">Market brief</span></label>
+              <label><input type="checkbox" id="x-partner" value="partner"><span data-t="x_partner">Partner or master franchisee</span></label>
+              <label><input type="checkbox" id="x-adapt" value="adaptation"><span data-t="x_adapt">Adaptation and localisation</span></label>
+              <label><input type="checkbox" id="x-promo" value="promotion"><span data-t="x_promo">Launch promotion</span></label>
+              <label><input type="checkbox" id="x-dist" value="distribution"><span data-t="x_dist">Distribution and marketplaces</span></label>
+              <label><input type="checkbox" id="x-cert" value="certification"><span data-t="x_cert">Certification</span></label>
+              <label><input type="checkbox" id="x-pay" value="payments_logistics"><span data-t="x_pay">Payments and logistics</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend data-t="q_price">Our model: no upfront fee for the pilot, and a success fee when a deal is signed. Does this work for you?</legend>
+            <div class="opts">
+              <label><input type="radio" name="price" id="p-yes" value="works"><span data-t="pr_yes">Yes, this works</span></label>
+              <label><input type="radio" name="price" id="p-fixed" value="prefer_fixed"><span data-t="pr_fixed">We prefer a fixed fee for research</span></label>
+              <label><input type="radio" name="price" id="p-ret" value="prefer_retainer"><span data-t="pr_ret">We prefer a monthly retainer</span></label>
+              <label><input type="radio" name="price" id="p-det" value="need_details"><span data-t="pr_details">Need details first</span></label>
+              <label><input type="radio" name="price" id="p-no" value="not_acceptable"><span data-t="pr_no">Not acceptable</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend><label for="agent" data-t="q_agent">What do you usually pay agents or partners abroad? Optional.</label></legend>
+            <input type="text" id="agent" maxlength="300" data-tp="ph_agent" placeholder="For example, 20% of the master fee">
+          </fieldset>
+          <fieldset>
+            <legend><label for="missing" data-t="q_miss">What was missing or unclear on this page?</label></legend>
+            <textarea id="missing" maxlength="1500"></textarea>
+          </fieldset>
+          <div class="fields">
+            <label class="fld" for="company"><span data-t="l_company">Company</span><input type="text" id="company" maxlength="200" autocomplete="organization"></label>
+            <label class="fld" for="person"><span data-t="l_person">Your name</span><input type="text" id="person" maxlength="200" autocomplete="name"></label>
+            <label class="fld" for="contact"><span data-t="l_contact">Email or WeChat ID</span><input type="text" id="contact" maxlength="200" autocomplete="email"></label>
+          </div>
+          <p class="err" id="err" hidden data-t="err_contact">Add an email or WeChat ID so we can reply.</p>
+          <p class="err" id="err2" hidden data-t="err_send">The form did not send. Write to info@startova.pro or WeChat KonstScherb.</p>
+          <div class="send">
+            <button class="btn btn-primary" type="submit" data-t="submit">Send</button>
+            <p class="note" data-t="fm_note">We use your answers only to reply to you and to plan our services.</p>
+          </div>
+          <button class="linkbtn" type="button" id="nopeBtn" aria-expanded="false" data-t="nope_btn">Not for us right now</button>
+          <div class="nope" id="nope" hidden>
+            <fieldset>
+              <legend data-t="nope_q">What is the main reason?</legend>
+              <div class="opts">
+                <label><input type="radio" name="nope" id="o-cis" value="no_cis_plans"><span data-t="o_cis">Not planning to enter the CIS</span></label>
+                <label><input type="radio" name="nope" id="o-risk" value="sanctions_payments"><span data-t="o_risk">Sanctions or payment risk</span></label>
+                <label><input type="radio" name="nope" id="o-has" value="has_partner"><span data-t="o_has">Already have a partner there</span></label>
+                <label><input type="radio" name="nope" id="o-early" value="too_early"><span data-t="o_early">Too early for us</span></label>
+                <label><input type="radio" name="nope" id="o-alone" value="go_alone"><span data-t="o_alone">We prefer to go alone</span></label>
+                <label><input type="radio" name="nope" id="o-oth" value="other"><span data-t="o_other">Other</span></label>
+              </div>
+            </fieldset>
+            <input type="text" id="nopeText" maxlength="500" data-tp="ph_nope" placeholder="Anything to add? Optional.">
+            <button class="btn btn-ghost" type="button" id="nopeSend" data-t="nope_send">Send reason</button>
+          </div>
+        </form>
+        <div class="thanks" id="thanks" hidden>
+          <h3 data-t="th_h">Thank you. We got it.</h3>
+          <p id="thanksText" data-t="th_t">If you left a contact, Konstantin will reply on WeChat or by email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="contact">
+      <div>
+        <h2 id="contact-title" data-t="ct_t">Meet us in Shanghai, 10–12 November 2026</h2>
+        <p class="lead" style="margin-bottom:0" data-t="ct_p">We are visiting the Shanghai International Franchise Expo. Write to us to set up a meeting at the expo or a call afterwards.</p>
+      </div>
+      <div class="cards">
+        <div class="ccard"><span data-t="ct_mail">Email</span><b>konstantin@startova.pro</b></div>
+        <div class="ccard"><span>WeChat</span><b>KonstScherb</b></div>
+        <div class="ccard"><span>Telegram</span><b>@konstsherb</b></div>
+        <div class="qrcard"><div class="qr"><img src="qr-wechat.svg" alt="WeChat QR code" width="84" height="84"></div><span data-t="ct_scan">Scan to add on WeChat</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+<footer>
+  <div class="wrap" data-t="foot3">Startova · Asian brands to Russia and Central Asia</div>
+</footer>
+
+<script>
+const FORM_ENDPOINT = "";
+const T = {"en": {"nav_contact": "Contact", "kicker": "Mainland China · Taiwan · Hong Kong · Japan · Singapore · Korea  →  Russia · Uzbekistan · Kazakhstan", "h1": "We bring Asian brands to Russia, Uzbekistan and Kazakhstan.", "lead": "Franchise brands and manufacturers get a market check, a vetted local partner, an adapted product and a launch. You do not need your own office in the region.", "cta1": "Tell us what you need", "cta2": "How a launch runs", "g_label": "Why brands stall at the border", "g_text": "China runs on 1435 mm track. Kazakhstan, Uzbekistan and Russia run on 1520 mm. At Khorgos and Dostyk those 85 mm mean every container is lifted onto another train. A brand meets the same border: menu, price, language, certification and partner all have to change. Startova is that transfer point.", "g_cn": "China · 1435 mm", "g_cis": "CIS · 1520 mm", "g_x": "Khorgos · Dostyk", "g_diff": "+85 mm", "who_title": "Two kinds of partners", "b_h": "Franchise brands", "b_sub": "Restaurants, cafés, tea and coffee, bakeries, retail and services that already franchise at home.", "b1": "Market brief for your category: demand, competitors and prices in Moscow, Tashkent, Almaty and Astana", "b2": "A vetted master franchisee: capital, operating team and food or retail experience checked", "b3": "Adaptation: menu and recipes for local supply, halal where needed, pricing, trademark, translated standards and training", "b4": "Launch: social media, targeted ads and delivery apps in each country", "b5": "Deal support on the ground until the master agreement is signed, and reports from open units after that", "b_pay": "You pay a success fee from the signed master agreement. Adaptation and promotion are priced per project.", "m_h": "Manufacturers", "m_sub": "Food and drink, kitchen and café equipment, packaging, consumer goods.", "m1": "A place in the equipment and supply lists of the businesses we help launch", "m2": "Distributors and dealers in each country, checked before you meet them", "m3": "Marketplaces: Wildberries and Ozon in Russia, Uzum in Uzbekistan, Kaspi in Kazakhstan", "m4": "Localisation: Russian labels and manuals, EAC certification for Russia and Kazakhstan, national certification in Uzbekistan", "m5": "Payment and logistics routes that work today, tested before the first shipment", "m_pay": "You pay a commission on sales or on the distribution deal.", "pay_label": "How you pay", "st_title": "How a launch runs", "s1h": "Call", "s1t": "30 minutes on WeChat, Zoom or at the expo. We learn your product, terms and limits.", "s2h": "Market brief", "s2t": "In 2–3 weeks: demand, competitors, prices and the best two or three cities for your category.", "s3h": "Partner and adaptation", "s3t": "We bring two or three vetted candidates and adapt the product, price and materials.", "s4h": "Launch", "s4t": "First unit or first shipment, local promotion and reports on how it sells.", "pilot_h": "Pilot: 60–90 days", "pilot_t": "Market brief and two or three vetted candidates. If we find no qualified candidate, you pay nothing.", "mk_title": "Where we start", "mk_lead": "Startova is built for any market. For now we focus on three CIS countries where we know the cities, partners and rules.", "c_ru": "Russia", "p_ru": "146.2 M people", "n_ru": "The largest of the three. Mass demand in most categories does not depend on halal certification.", "c_uz": "Uzbekistan", "p_uz": "38.4 M people", "n_uz": "82,400 new companies registered in 2025. For food, halal matters.", "c_kz": "Kazakhstan", "p_kz": "20.5 M people", "n_kz": "About 2.15 M operating small and medium businesses. Visitors from China up 46.8% in 2025.", "mk_next": "Next: Kyrgyzstan, UAE, Saudi Arabia.", "src": "Sources: Rosstat (1 Jan 2024), Statistics Agency of Uzbekistan, national statistics of Kazakhstan, Zakon.kz, Travel Trends Today.", "f_label": "Who you will work with", "f_name": "Konstantin Scherbakov, founder", "f_text": "15 years in consumer electronics between China and the CIS. Built the official Xiaomi distribution, created the Nobby phone brand and led the smartphone category at DNS, one of Russia's largest electronics retailers. Knows how a product made in Asia is adapted, certified and sold in the CIS.", "expo": "Meet us at the Shanghai International Franchise Expo, 10–12 November 2026, SNIEC.", "fm_title": "Tell us what you need", "fm_lead": "Five minutes. Your answers decide which services we build first. We reply to everyone who leaves a contact.", "q_role": "You are", "r_brand": "Franchise brand", "r_mf": "Manufacturer", "r_dist": "Distributor or trading company", "r_inv": "Investor", "r_other": "Other", "q_home": "Where you are based", "h_cn": "Mainland China", "h_tw": "Taiwan", "h_hk": "Hong Kong", "h_jp": "Japan", "h_sg": "Singapore", "h_kr": "Korea", "h_other": "Other", "q_mk": "Markets you are considering", "k_ru": "Russia", "k_uz": "Uzbekistan", "k_kz": "Kazakhstan", "k_cis": "Other CIS", "k_open": "Not decided", "q_need": "What you need from us", "x_brief": "Market brief", "x_partner": "Partner or master franchisee", "x_adapt": "Adaptation and localisation", "x_promo": "Launch promotion", "x_dist": "Distribution and marketplaces", "x_cert": "Certification", "x_pay": "Payments and logistics", "q_price": "Our model: no upfront fee for the pilot, and a success fee when a deal is signed. Does this work for you?", "pr_yes": "Yes, this works", "pr_fixed": "We prefer a fixed fee for research", "pr_ret": "We prefer a monthly retainer", "pr_details": "Need details first", "pr_no": "Not acceptable", "q_agent": "What do you usually pay agents or partners abroad? Optional.", "ph_agent": "For example, 20% of the master fee", "q_miss": "What was missing or unclear on this page?", "l_company": "Company", "l_person": "Your name", "l_contact": "Email or WeChat ID", "err_contact": "Add an email or WeChat ID so we can reply.", "submit": "Send", "fm_note": "We use your answers only to reply to you and to plan our services.", "nope_btn": "Not for us right now", "nope_q": "What is the main reason?", "o_cis": "Not planning to enter the CIS", "o_risk": "Sanctions or payment risk", "o_has": "Already have a partner there", "o_early": "Too early for us", "o_alone": "We prefer to go alone", "o_other": "Other", "ph_nope": "Anything to add? Optional.", "nope_send": "Send reason", "th_h": "Thank you. We got it.", "th_t": "If you left a contact, Konstantin will reply on WeChat or by email.", "th_nope": "Thank you. This helps us decide where to focus.", "err_send": "The form did not send. Write to info@startova.pro or WeChat KonstScherb.", "ct_title": "Contact", "ct_scan": "Scan to add on WeChat", "ct_mail": "Email", "foot": "Startova · 创途 · Business launch for Asian brands in the CIS", "doc_title": "Startova — Asian brands to Russia and Central Asia", "kicker3": "For Asian brands · Russia and Central Asia", "cta_b": "For franchise brands", "cta_m": "For manufacturers", "city_sha": "Shanghai", "city_sel": "Seoul", "city_tyo": "Tokyo", "city_tpe": "Taipei", "city_hkg": "Hong Kong", "city_sin": "Singapore", "city_ala": "Almaty", "city_tas": "Tashkent", "city_nqz": "Astana", "city_mow": "→ Moscow", "sn1": "205 M", "sx1": "people in Russia, Uzbekistan and Kazakhstan", "sn2": "82.4k", "sx2": "new companies in Uzbekistan in 2025", "sn3": "2.15 M", "sx3": "operating small and medium businesses in Kazakhstan", "sn4": "+46.8%", "sx4": "visitors from China to Kazakhstan, 2025 vs 2024", "src3": "Sources: Rosstat, national statistics of Uzbekistan and Kazakhstan, Zakon.kz, Travel Trends Today.", "sides_lead": "Franchise brands and manufacturers from mainland China, Taiwan, Hong Kong, Japan, Singapore and Korea.", "tag_b": "Franchisors", "tag_m": "Manufacturers", "ttl_b": "Enter three countries without an office of your own", "ttl_m": "Sell in Russia and Central Asia through checked partners", "pilot_title": "Pilot for brands", "pilot_p": "In 60–90 days we prepare a market brief for your category and introduce 2–3 vetted candidates. If we find no suitable candidate, you pay nothing.", "pilot_cta": "Discuss a pilot", "t1n": "60–90 days", "t1t": "from the first call to introductions", "t2n": "2–3 candidates", "t2t": "checked for capital and operating experience", "t3n": "Success fee", "t3t": "paid only when an agreement is signed", "mk_t": "Markets", "mk_p": "Startova is built for any market. For now we focus on Russia, Uzbekistan and Kazakhstan, where we know the cities, partners and rules. In Russia mass demand in most categories does not depend on halal certification; in Uzbekistan and Kazakhstan halal matters for food.", "mk_ru": "Russia", "mk_uz": "Uzbekistan", "mk_kz": "Kazakhstan", "mk_kg": "Kyrgyzstan", "mk_ae": "UAE", "mk_sa": "Saudi Arabia", "lim_t": "What we don't do", "lim1": "We don't guarantee payback or the financial result of any business.", "lim2": "We don't give legal or investment advice. Licensed local partners do.", "lim3": "We don't invest in franchises.", "ct_t": "Meet us in Shanghai, 10–12 November 2026", "ct_p": "We are visiting the Shanghai International Franchise Expo. Write to us to set up a meeting at the expo or a call afterwards.", "foot3": "Startova · Asian brands to Russia and Central Asia", "nav_form": "Tell us what you need"}, "ru": {"nav_contact": "Контакты", "kicker": "Китай · Тайвань · Гонконг · Япония · Сингапур · Корея  →  Россия · Узбекистан · Казахстан", "h1": "Выводим азиатские бренды в Россию, Узбекистан и Казахстан.", "lead": "Франчайзинговые бренды и производители получают проверку рынка, проверенного местного партнёра, адаптированный продукт и запуск. Свой офис в регионе не нужен.", "cta1": "Расскажите, что вам нужно", "cta2": "Как проходит запуск", "g_label": "Почему бренды застревают на границе", "g_text": "В Китае колея 1435 мм, в Казахстане, Узбекистане и России — 1520 мм. На Хоргосе и Достыке из-за этих 85 мм каждый контейнер переставляют на другой поезд. Бренд упирается в ту же границу: меню, цену, язык, сертификацию и партнёра нужно менять. Startova — это пункт перестановки.", "g_cn": "Китай · 1435 мм", "g_cis": "СНГ · 1520 мм", "g_x": "Хоргос · Достык", "g_diff": "+85 мм", "who_title": "С кем мы работаем", "b_h": "Франчайзинговые бренды", "b_sub": "Рестораны, кафе, чай и кофе, пекарни, ритейл и сервисы, которые уже продают франшизу у себя.", "b1": "Обзор рынка под вашу категорию: спрос, конкуренты и цены в Москве, Ташкенте, Алматы и Астане", "b2": "Проверенный мастер-франчайзи: капитал, операционная команда, опыт в общепите или рознице", "b3": "Адаптация: меню и рецептуры под местные поставки, халяль где нужно, цены, товарный знак, перевод стандартов и обучения", "b4": "Запуск: соцсети, таргетированная реклама и агрегаторы доставки в каждой стране", "b5": "Сопровождение сделки на месте до подписания мастер-договора, после открытия — отчёты по точкам", "b_pay": "Вы платите комиссию с подписанного мастер-договора. Адаптация и продвижение — по проекту.", "m_h": "Производители", "m_sub": "Продукты и напитки, оборудование для кухни и кафе, упаковка, потребительские товары.", "m1": "Место в списках оборудования и поставок для бизнесов, которые мы запускаем", "m2": "Дистрибьюторы и дилеры в каждой стране, проверенные до встречи", "m3": "Маркетплейсы: Wildberries и Ozon в России, Uzum в Узбекистане, Kaspi в Казахстане", "m4": "Локализация: этикетки и инструкции на русском, сертификация EAC для России и Казахстана, национальная сертификация в Узбекистане", "m5": "Работающие сейчас платёжные и логистические маршруты, проверенные до первой отгрузки", "m_pay": "Вы платите комиссию с продаж или с дистрибьюторской сделки.", "pay_label": "Как вы платите", "st_title": "Как проходит запуск", "s1h": "Звонок", "s1t": "30 минут в WeChat, Zoom или на выставке. Разбираемся в продукте, условиях и ограничениях.", "s2h": "Обзор рынка", "s2t": "За 2–3 недели: спрос, конкуренты, цены и два-три лучших города под вашу категорию.", "s3h": "Партнёр и адаптация", "s3t": "Приводим двух-трёх проверенных кандидатов и адаптируем продукт, цену и материалы.", "s4h": "Запуск", "s4t": "Первая точка или первая поставка, местное продвижение и отчёты о продажах.", "pilot_h": "Пилот: 60–90 дней", "pilot_t": "Обзор рынка и два-три проверенных кандидата. Если достойного кандидата нет, вы ничего не платите.", "mk_title": "С чего начинаем", "mk_lead": "Startova строится для любых рынков. Сейчас мы сосредоточены на трёх странах СНГ, где знаем города, партнёров и правила.", "c_ru": "Россия", "p_ru": "146,2 млн жителей", "n_ru": "Крупнейший рынок из трёх. Массовый спрос в большинстве категорий не зависит от халяльной сертификации.", "c_uz": "Узбекистан", "p_uz": "38,4 млн жителей", "n_uz": "82,4 тыс. новых компаний за 2025 год. В еде важен халяль.", "c_kz": "Казахстан", "p_kz": "20,5 млн жителей", "n_kz": "Около 2,15 млн работающих малых и средних предприятий. Гостей из Китая в 2025 году на 46,8% больше.", "mk_next": "Дальше: Кыргызстан, ОАЭ, Саудовская Аравия.", "src": "Источники: Росстат (на 1 января 2024), Агентство статистики Узбекистана, национальная статистика Казахстана, Zakon.kz, Travel Trends Today.", "f_label": "С кем вы будете работать", "f_name": "Константин Щербаков, основатель", "f_text": "15 лет в потребительской электронике между Китаем и СНГ. Выстроил официальную дистрибуцию Xiaomi, создал бренд телефонов Nobby, руководил категорией смартфонов в DNS — одной из крупнейших сетей электроники в России. Знает, как товар из Азии адаптируют, сертифицируют и продают в СНГ.", "expo": "Встретимся на Шанхайской международной выставке франчайзинга, 10–12 ноября 2026, SNIEC.", "fm_title": "Расскажите, что вам нужно", "fm_lead": "Пять минут. Ваши ответы решают, какие услуги мы сделаем первыми. Всем, кто оставит контакт, ответим.", "q_role": "Вы", "r_brand": "Франчайзинговый бренд", "r_mf": "Производитель", "r_dist": "Дистрибьютор или торговая компания", "r_inv": "Инвестор", "r_other": "Другое", "q_home": "Где вы находитесь", "h_cn": "Китай", "h_tw": "Тайвань", "h_hk": "Гонконг", "h_jp": "Япония", "h_sg": "Сингапур", "h_kr": "Корея", "h_other": "Другое", "q_mk": "Какие рынки рассматриваете", "k_ru": "Россия", "k_uz": "Узбекистан", "k_kz": "Казахстан", "k_cis": "Другие страны СНГ", "k_open": "Пока не решили", "q_need": "Что вам нужно от нас", "x_brief": "Обзор рынка", "x_partner": "Партнёр или мастер-франчайзи", "x_adapt": "Адаптация и локализация", "x_promo": "Продвижение при запуске", "x_dist": "Дистрибуция и маркетплейсы", "x_cert": "Сертификация", "x_pay": "Платежи и логистика", "q_price": "Наша модель: пилот без предоплаты, комиссия — когда сделка подписана. Вам это подходит?", "pr_yes": "Да, подходит", "pr_fixed": "Лучше фиксированная оплата за исследование", "pr_ret": "Лучше ежемесячная оплата", "pr_details": "Сначала нужны детали", "pr_no": "Не подходит", "q_agent": "Сколько вы обычно платите агентам или партнёрам за рубежом? Необязательно.", "ph_agent": "Например, 20% от паушального взноса", "q_miss": "Чего не хватило или что непонятно на этой странице?", "l_company": "Компания", "l_person": "Ваше имя", "l_contact": "Email или WeChat ID", "err_contact": "Оставьте email или WeChat ID, чтобы мы могли ответить.", "submit": "Отправить", "fm_note": "Используем ответы только чтобы ответить вам и спланировать сервис.", "nope_btn": "Нам сейчас не подходит", "nope_q": "Какая главная причина?", "o_cis": "Не планируем выходить в СНГ", "o_risk": "Санкции или риски с платежами", "o_has": "Уже есть партнёр в регионе", "o_early": "Для нас пока рано", "o_alone": "Предпочитаем выходить сами", "o_other": "Другое", "ph_nope": "Хотите что-то добавить? Необязательно.", "nope_send": "Отправить причину", "th_h": "Спасибо, получили.", "th_t": "Если вы оставили контакт, Константин ответит в WeChat или по почте.", "th_nope": "Спасибо, это помогает нам понять, на чём сосредоточиться.", "err_send": "Форма не отправилась. Напишите на info@startova.pro или в WeChat KonstScherb.", "ct_title": "Контакты", "ct_scan": "Отсканируйте, чтобы добавить в WeChat", "ct_mail": "Почта", "foot": "Startova · 创途 · Запуск азиатских брендов в СНГ", "doc_title": "Startova — азиатские бренды в Россию и Центральную Азию", "kicker3": "Для азиатских брендов · Россия и Центральная Азия", "cta_b": "Франчайзинговым брендам", "cta_m": "Производителям", "city_sha": "Шанхай", "city_sel": "Сеул", "city_tyo": "Токио", "city_tpe": "Тайбэй", "city_hkg": "Гонконг", "city_sin": "Сингапур", "city_ala": "Алматы", "city_tas": "Ташкент", "city_nqz": "Астана", "city_mow": "→ Москва", "sn1": "205 млн", "sx1": "жителей России, Узбекистана и Казахстана", "sn2": "82,4 тыс.", "sx2": "новых компаний в Узбекистане за 2025 год", "sn3": "2,15 млн", "sx3": "работающих малых и средних предприятий в Казахстане", "sn4": "+46,8%", "sx4": "рост числа гостей из Китая в Казахстане, 2025 к 2024", "src3": "Источники: Росстат, национальная статистика Узбекистана и Казахстана, Zakon.kz, Travel Trends Today.", "sides_lead": "Франчайзинговые бренды и производители из Китая, Тайваня, Гонконга, Японии, Сингапура и Кореи.", "tag_b": "Франчайзеры", "tag_m": "Производители", "ttl_b": "Выход в три страны без собственного офиса", "ttl_m": "Продажи в России и Центральной Азии через проверенных партнёров", "pilot_title": "Пилот для брендов", "pilot_p": "За 60–90 дней готовим обзор рынка под вашу категорию и знакомим с 2–3 проверенными кандидатами. Если подходящего кандидата нет, вы ничего не платите.", "pilot_cta": "Обсудить пилот", "t1n": "60–90 дней", "t1t": "от первого звонка до знакомства с кандидатами", "t2n": "2–3 кандидата", "t2t": "с проверенным капиталом и опытом", "t3n": "Оплата за результат", "t3t": "только после подписания договора", "mk_t": "Рынки", "mk_p": "Startova строится для любых рынков. Сейчас мы сосредоточены на России, Узбекистане и Казахстане, где знаем города, партнёров и правила. В России массовый спрос в большинстве категорий не зависит от халяльной сертификации, в Узбекистане и Казахстане в еде важен халяль.", "mk_ru": "Россия", "mk_uz": "Узбекистан", "mk_kz": "Казахстан", "mk_kg": "Кыргызстан", "mk_ae": "ОАЭ", "mk_sa": "Саудовская Аравия", "lim_t": "Чего мы не делаем", "lim1": "Не гарантируем окупаемость и финансовый результат бизнеса.", "lim2": "Не даём юридических и инвестиционных советов. Это делают лицензированные местные партнёры.", "lim3": "Не инвестируем в франшизы.", "ct_t": "Встретимся в Шанхае 10–12 ноября 2026", "ct_p": "Мы будем на Shanghai International Franchise Expo. Напишите, чтобы договориться о встрече на выставке или о звонке после неё.", "foot3": "Startova · Азиатские бренды в Россию и Центральную Азию", "nav_form": "Расскажите, что нужно"}, "zh": {"nav_contact": "联系我们", "kicker": "中国大陆及港澳台地区 · 日本 · 新加坡 · 韩国  →  俄罗斯 · 乌兹别克斯坦 · 哈萨克斯坦", "h1": "我们帮助亚洲品牌进入俄罗斯、乌兹别克斯坦和哈萨克斯坦。", "lead": "加盟品牌和生产企业可获得：市场评估、经过审核的当地合作伙伴、适配本地的产品以及落地启动。无需在当地设立办公室。", "cta1": "告诉我们您的需求", "cta2": "了解合作流程", "g_label": "品牌为何卡在边境", "g_text": "中国铁路采用1435毫米标准轨，哈萨克斯坦、乌兹别克斯坦和俄罗斯采用1520毫米宽轨。在霍尔果斯和多斯特克，这85毫米意味着每个集装箱都要换装到另一列火车上。品牌出海也会遇到同样的边境：菜单、价格、语言、认证和合作伙伴都需要调整。创途就是这个换装站。", "g_cn": "中国 · 1435毫米", "g_cis": "独联体 · 1520毫米", "g_x": "霍尔果斯 · 多斯特克", "g_diff": "+85毫米", "who_title": "我们服务两类合作方", "b_h": "连锁加盟品牌", "b_sub": "已在本国开展加盟的餐饮、咖啡茶饮、烘焙、零售和服务品牌。", "b1": "针对您品类的市场简报：莫斯科、塔什干、阿拉木图、阿斯塔纳的需求、竞争和价格", "b2": "经过审核的区域代理（主加盟商）：核实资金、运营团队及餐饮或零售经验", "b3": "本地化适配：根据当地供应调整菜单和配方，按需办理清真认证，定价、商标注册、标准和培训资料翻译", "b4": "落地推广：各国社交媒体、精准广告和外卖平台", "b5": "在当地全程协助谈判直至签署区域代理协议，开业后提供门店经营反馈", "b_pay": "签署区域代理协议后收取成功佣金。适配和推广按项目报价。", "m_h": "生产企业", "m_sub": "食品饮料、厨房及咖啡设备、包装、消费品。", "m1": "进入我们协助开设门店的设备与采购清单", "m2": "各国经销商和代理商，见面前已完成审核", "m3": "电商平台：俄罗斯 Wildberries、Ozon，乌兹别克斯坦 Uzum，哈萨克斯坦 Kaspi", "m4": "本地化：俄文标签和说明书，俄罗斯和哈萨克斯坦的EAC认证，乌兹别克斯坦的国家认证", "m5": "目前可行的付款和物流通道，首批发货前先行测试", "m_pay": "按销售额或经销协议收取佣金。", "pay_label": "收费方式", "st_title": "落地流程", "s1h": "沟通", "s1t": "通过微信、Zoom或在展会上沟通30分钟，了解您的产品、条件和限制。", "s2h": "市场简报", "s2t": "2–3周内提供：需求、竞争、价格，以及最适合您品类的两三个城市。", "s3h": "合作伙伴与适配", "s3t": "我们推荐两三家经审核的候选方，并调整产品、价格和资料。", "s4h": "落地", "s4t": "首家门店或首批货物上市，当地推广，并反馈销售情况。", "pilot_h": "试点：60–90天", "pilot_t": "市场简报加两三家经审核的候选方。如未找到合格候选方，您无需付费。", "mk_title": "首批市场", "mk_lead": "创途面向全球市场。目前我们专注于三个独联体国家：我们熟悉这些国家的城市、合作伙伴和规则。", "c_ru": "俄罗斯", "p_ru": "1.462亿人口", "n_ru": "三国中最大的市场。大多数品类的大众需求不依赖清真认证。", "c_uz": "乌兹别克斯坦", "p_uz": "3840万人口", "n_uz": "2025年新注册企业8.24万家。餐饮需重视清真。", "c_kz": "哈萨克斯坦", "p_kz": "2050万人口", "n_kz": "约215万家实际运营的中小企业。2025年来自中国的游客增长46.8%。", "mk_next": "下一步：吉尔吉斯斯坦、阿联酋、沙特阿拉伯。", "src": "数据来源：俄罗斯联邦统计局（2024年1月1日）、乌兹别克斯坦统计署、哈萨克斯坦国家统计数据、Zakon.kz、Travel Trends Today。", "f_label": "您的对接人", "f_name": "Konstantin Scherbakov（康斯坦丁·谢尔巴科夫），创始人", "f_text": "在中国与独联体之间的消费电子行业深耕15年。曾搭建小米官方分销体系，创立Nobby手机品牌，并负责俄罗斯大型电子零售商DNS的智能手机品类。熟悉亚洲产品如何在独联体完成适配、认证和销售。", "expo": "欢迎于2026年11月10–12日在上海国际加盟展（上海新国际博览中心）与我们见面。", "fm_title": "告诉我们您的需求", "fm_lead": "约需5分钟。您的回答将决定我们优先提供哪些服务。留下联系方式的，我们都会回复。", "q_role": "您是", "r_brand": "加盟品牌", "r_mf": "生产企业", "r_dist": "经销商或贸易公司", "r_inv": "投资人", "r_other": "其他", "q_home": "您的总部所在地", "h_cn": "中国大陆", "h_tw": "台湾", "h_hk": "香港", "h_jp": "日本", "h_sg": "新加坡", "h_kr": "韩国", "h_other": "其他", "q_mk": "您考虑的市场", "k_ru": "俄罗斯", "k_uz": "乌兹别克斯坦", "k_kz": "哈萨克斯坦", "k_cis": "其他独联体国家", "k_open": "尚未确定", "q_need": "您需要我们提供什么", "x_brief": "市场简报", "x_partner": "合作伙伴或区域代理", "x_adapt": "本地化适配", "x_promo": "落地推广", "x_dist": "分销和电商平台", "x_cert": "认证", "x_pay": "付款和物流", "q_price": "我们的模式：试点不收预付费，签约后收取成功佣金。您能接受吗？", "pr_yes": "可以接受", "pr_fixed": "更倾向为调研支付固定费用", "pr_ret": "更倾向按月付费", "pr_details": "需要先了解细节", "pr_no": "无法接受", "q_agent": "您通常向海外代理或合作伙伴支付多少费用？选填。", "ph_agent": "例如：区域代理费的20%", "q_miss": "本页面缺少或不清楚的内容是什么？", "l_company": "公司名称", "l_person": "您的姓名", "l_contact": "邮箱或微信号", "err_contact": "请留下邮箱或微信号，以便我们回复。", "submit": "提交", "fm_note": "您的信息仅用于回复您和规划我们的服务。", "nope_btn": "目前不适合我们", "nope_q": "主要原因是什么？", "o_cis": "暂无进入独联体的计划", "o_risk": "制裁或付款风险", "o_has": "当地已有合作伙伴", "o_early": "对我们来说为时过早", "o_alone": "我们倾向于自己开拓", "o_other": "其他", "ph_nope": "还有补充吗？选填。", "nope_send": "提交原因", "th_h": "谢谢，已收到。", "th_t": "如您留下了联系方式，Konstantin将通过微信或邮件回复您。", "th_nope": "谢谢，这有助于我们确定工作重点。", "err_send": "提交失败。请发邮件至 info@startova.pro 或添加微信 KonstScherb。", "ct_title": "联系方式", "ct_scan": "扫码添加微信", "ct_mail": "邮箱", "foot": "Startova · 创途 · 助力亚洲品牌在独联体落地", "doc_title": "创途 Startova — 助力亚洲品牌进入俄罗斯和中亚", "kicker3": "致亚洲品牌 · 俄罗斯与中亚", "cta_b": "致加盟品牌", "cta_m": "致生产企业", "city_sha": "上海", "city_sel": "首尔", "city_tyo": "东京", "city_tpe": "台北", "city_hkg": "香港", "city_sin": "新加坡", "city_ala": "阿拉木图", "city_tas": "塔什干", "city_nqz": "阿斯塔纳", "city_mow": "→ 莫斯科", "sn1": "2.05亿", "sx1": "俄罗斯、乌兹别克斯坦和哈萨克斯坦人口", "sn2": "8.24万", "sx2": "2025年乌兹别克斯坦新设企业", "sn3": "215万", "sx3": "哈萨克斯坦实际运营的中小企业", "sn4": "+46.8%", "sx4": "2025年中国赴哈萨克斯坦人数同比增长", "src3": "数据来源：俄罗斯联邦统计局、乌兹别克斯坦和哈萨克斯坦国家统计机构、Zakon.kz、Travel Trends Today。", "sides_lead": "来自中国大陆及港澳台地区、日本、新加坡和韩国的加盟品牌和生产企业。", "tag_b": "加盟品牌", "tag_m": "生产企业", "ttl_b": "无需自设办公室，即可进入三个国家", "ttl_m": "通过经审核的合作伙伴在俄罗斯和中亚销售", "pilot_title": "品牌试点", "pilot_p": "60–90天内，我们为您的品类完成市场简报，并推荐2–3家经审核的候选方。如未找到合适的候选方，您无需支付任何费用。", "pilot_cta": "洽谈试点", "t1n": "60–90天", "t1t": "从首次沟通到候选方对接", "t2n": "2–3家候选方", "t2t": "资金和运营经验经过核实", "t3n": "按成果收费", "t3t": "仅在签约后支付", "mk_t": "市场", "mk_p": "创途面向全球市场。目前我们专注于俄罗斯、乌兹别克斯坦和哈萨克斯坦：我们熟悉这些国家的城市、合作伙伴和规则。在俄罗斯，大多数品类的大众需求不依赖清真认证；在乌兹别克斯坦和哈萨克斯坦，餐饮需重视清真。", "mk_ru": "俄罗斯", "mk_uz": "乌兹别克斯坦", "mk_kz": "哈萨克斯坦", "mk_kg": "吉尔吉斯斯坦", "mk_ae": "阿联酋", "mk_sa": "沙特阿拉伯", "lim_t": "我们不做的事", "lim1": "我们不保证投资回报或任何门店的经营结果。", "lim2": "我们不提供法律或投资建议，这些由持牌的本地合作伙伴负责。", "lim3": "我们不投资加盟项目。", "ct_t": "2026年11月10–12日，上海见", "ct_p": "我们将参观上海国际连锁加盟展。欢迎联系我们，在展会期间见面或在展后安排通话。", "foot3": "Startova 创途 · 助力亚洲品牌进入俄罗斯和中亚", "nav_form": "告诉我们您的需求"}};
+const titles = {en:"Startova", ru:"Startova", zh:"Startova 创途"};
+let lang = "en";
+function setLang(l){
+  if(!T[l]) l = "en";
+  lang = l;
+  const d = T[l];
+  document.querySelectorAll("[data-t]").forEach(n => { const v = d[n.dataset.t]; if (v != null) n.textContent = v; });
+  document.querySelectorAll("[data-tp]").forEach(n => { const v = d[n.dataset.tp]; if (v != null) n.placeholder = v; });
+  document.documentElement.lang = l;
+  document.title = titles[l];
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l ? "true" : "false"));
+  try { localStorage.setItem("st-lang", l); } catch(e) {}
+}
+function pick(){
+  const h = location.hash.replace("#","");
+  if (T[h]) return h;
+  try { const s = localStorage.getItem("st-lang"); if (s && T[s]) return s; } catch(e) {}
+  const n = (navigator.language || "en").toLowerCase();
+  if (n.startsWith("ru")) return "ru";
+  if (n.startsWith("zh")) return "zh";
+  return "en";
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+window.addEventListener("hashchange", () => { const h = location.hash.replace("#",""); if (T[h]) setLang(h); });
+setLang(pick());
+
+const form = document.getElementById("lead");
+const err = document.getElementById("err"), err2 = document.getElementById("err2");
+const thanks = document.getElementById("thanks"), thanksText = document.getElementById("thanksText");
+const radio = n => { const el = form.querySelector('input[name="'+n+'"]:checked'); return el ? el.value : ""; };
+const checks = g => [...form.querySelectorAll('[data-group="'+g+'"] input:checked')].map(i => i.value);
+const val = id => document.getElementById(id).value.trim();
+async function send(payload, key){
+  err2.hidden = true;
+  payload.lang = lang; payload.page = "startova.pro"; payload.sent_at = new Date().toISOString();
+  if (FORM_ENDPOINT) {
+    try {
+      const r = await fetch(FORM_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(payload)});
+      if (!r.ok) throw new Error("HTTP " + r.status);
+    } catch(e) { err2.hidden = false; return; }
+  } else {
+    if (/startova\.pro$|github\.io$/.test(location.hostname)) { err2.hidden = false; return; }
+    console.log("[Startova] form endpoint not set; payload:", payload);
+  }
+  form.hidden = true; thanks.hidden = false;
+  thanksText.dataset.t = key; thanksText.textContent = T[lang][key];
+}
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const contact = val("contact");
+  if (!contact) { err.hidden = false; document.getElementById("contact").focus(); return; }
+  err.hidden = true;
+  send({type:"lead", role:radio("role"), home:radio("home"), markets:checks("markets"), needs:checks("needs"),
+        price:radio("price"), agent_fee:val("agent"), missing:val("missing"),
+        company:val("company"), name:val("person"), contact:contact}, "th_t");
+});
+const nopeBtn = document.getElementById("nopeBtn"), nope = document.getElementById("nope");
+nopeBtn.addEventListener("click", () => { nope.hidden = !nope.hidden; nopeBtn.setAttribute("aria-expanded", String(!nope.hidden)); });
+document.getElementById("nopeSend").addEventListener("click", () => {
+  send({type:"not_for_us", reason:radio("nope"), comment:val("nopeText"), role:radio("role"), home:radio("home"),
+        price:radio("price"), missing:val("missing"), contact:val("contact"), company:val("company")}, "th_nope");
+});
+</script>
+
+</body>
+</html>
